@@ -1,0 +1,65 @@
+@media only screen and (max-width: 890px) {
+    .top-icons-agileits li{
+        margin: 0;
+    }
+    .top-icons-agileits a {
+        padding: 8px 7px;
+    }
+    .drop-1 {
+        left: -9rem;
+    }
+    .drop-2 {
+        left: -12rem;
+    }
+    .drop-3 {
+        left: -15.3rem;
+    }
+}
+@media only screen and (max-width: 700px){
+    .weather-bottom ul {
+        flex-direction: column;
+    } 
+    .weather-bottom ul li {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1em;
+    }
+    /* ..weather-bottom ul li { */
+}
+
+@media only screen and (max-width: 777px) {
+    .form-inline {
+        display: none;
+    }
+    .li-search {
+        display: block;
+    }
+}
+@media only screen and (max-width: 460px) {
+    #sidebar {
+        transform: translateX(-250px);
+        position: absolute;
+    }
+}
+@media only screen and (max-width: 355px) {
+    .top-icons-agileits li{
+        margin: 0;
+    }
+    .drop-1 {
+        left: -8.1rem;
+        top: 120%;
+        min-width: 19.4rem;
+    }
+    .drop-2 {
+        left: -11.2rem;
+        top: 120%;
+        min-width: 19.4rem;
+    }
+    .drop-3 {
+        left: -14.5rem;
+        top: 120%;
+        min-width: 19.4rem;
+    }
+}
