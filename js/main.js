@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const navItem = document.querySelectorAll(".nav-item")
     const dropdownMenu = document.querySelectorAll(".dropdown-menu")
     const odern = sidebar.querySelector("#odern")
- 
+
     function changeNavebar() {
         sidebar.classList.toggle("active")
         odern.classList.toggle("active")
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function changeAnotherWayNavebar() {
         sidebar.classList.toggle("hideActive");
         navbar.classList.toggle("navbarHideActive");
-        setTimeout(() =>{
+        setTimeout(() => {
             // sidebar.style.display = "none";
         }, 1000)
     };
@@ -22,8 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function sizeChange() {
         const w = window.innerWidth;
-
-        if (w <= 992) {
+       
+        if (w <= 992 && w >= 460) {
             sidebar.classList.add("active");
             windowWidth = w;
             sidebarCollapse.removeEventListener("click", changeNavebar);

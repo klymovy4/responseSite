@@ -74,47 +74,46 @@ const renderWether = (weather) => {
     const li = `
         <li class="weather-li">
             <h4 class="">${curentDayShort}</h4>
-            <span></span>
+         
             <i class="fas fa-bolt"></i>
             <span class="max">Max ${showTemperatureMax(weather).toFixed(0)}</span>
             <span class="min">Min ${showTemperatureMin(weather).toFixed(0)}</span>
         </li>
         <li class="weather-li">
-            <h4 class="my-2">Th</h4>
-            <span></span>
-            <i class="far fa-moon mt-2"></i>
-            <span class="max mt-2">Max 23</span>
-            <span class="min mt-1 mb-2">Min 12</span>
+            <h4 class="">Th</h4>
+            <i class="far fa-moon"></i>
+            <span class="max ">Max 23</span>
+            <span class="min ">Min 12</span>
         </li>
         <li class="weather-li">
-            <h4 class="my-2">Fr</h4>
-            <i class="fas fa-rainbow mt-2"></i>
-            <span class="max mt-2">Max 23</span>
-            <span class="min mt-1 mb-2">Min 12</span>
+            <h4 class=>Fr</h4>
+            <i class="fas fa-rainbow"></i>
+            <span class="max ">Max 23</span>
+            <span class="min ">Min 12</span>
         </li>
         <li class="weather-li">
-            <h4 class="my-2">Sa</h4>
-            <i class="fas fa-cloud-sun-rain mt-2"></i>
-            <span class="max mt-2">Max 23</span>
-            <span class="min mt-1 mb-2">Min 12</span>
+            <h4 class="">Sa</h4>
+            <i class="fas fa-cloud-sun-rain"></i>
+            <span class="max ">Max 23</span>
+            <span class="min ">Min 12</span>
         </li>
         <li class="weather-li">
             <h4 class="my-2">Su</h4>
-            <i class="fas fa-cloud-rain mt-2"></i>
-            <span class="max mt-2">Max 23</span>
-            <span class="min mt-1 mb-2">Min 12</span>
+            <i class="fas fa-cloud-rain"></i>
+            <span class="max ">Max 23</span>
+            <span class="min ">Min 12</span>
+        </li>
+        <li class="weather-li ">
+            <h4 class=" ">Mo</h4>
+            <i class="far fa-sun "></i>
+            <span class="max ">Max 23</span>
+            <span class="min ">Min 12</span>
         </li>
         <li class="weather-li">
-            <h4 class="my-2">Mo</h4>
-            <i class="far fa-sun mt-2"></i>
-            <span class="max mt-2">Max 23</span>
-            <span class="min mt-1 mb-2">Min 12</span>
-        </li>
-        <li class="weather-li">
-            <h4 class="my-2">Tu</h4>
-            <i class="fas fa-cloud-moon-rain mt-2"></i>
-            <span class="max mt-2">Max 23</span>
-            <span class="min mt-1 mb-2">Min 12</span>
+            <h4 class="">Tu</h4>
+            <i class="fas fa-cloud-moon-rain "></i>
+            <span class="max ">Max 23</span>
+            <span class="min ">Min 12</span>
         </li>
     `
     return weatherUl.innerHTML = li
