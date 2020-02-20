@@ -305,12 +305,20 @@ li {
     padding: 2em;
     border-radius: 25px;
     overflow: hidden;
-    height: 313.6px
+    height: 313.6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-.weather-top h3 {
+.weather-top {
+    overflow: hidden;
+}
+#currentCity {
     font-weight: 900;
     color: #f75757;
-    margin: auto;
+}
+.weather-main-block p {
+    color: white;
 }
 .weather-top .fa-sun {
     font-size: 43px;
@@ -358,4 +366,26 @@ li {
 .persons .who {
     width: -webkit-fill-available;
     text-align: right;
+}
+#anotherCity {
+    transform: translateY(100%)
+}
+#anotherCity:focus, #showWeather:focus {
+    box-shadow: none;
+}
+.form-inline, #anotherCity {
+    transition: 0.5s ease-in-out;
+    align-items: end;
+}
+.anotherCity-block {
+    text-align: right;
+    overflow: hidden;
+}
+.form-group{
+    position: relative;
+}
+#error {
+    position: absolute;
+    color: #f75757;
+    top: 34px;
 }

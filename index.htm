@@ -214,68 +214,56 @@
                                 <h4 class="mb-4">Whether widgets</h4>
                                 <div class="main-info">
                                     <div class="weather-top d-flex justify-content-between align-items-center">
-                                        <div>
-                                            <h3 id="city" class="days mb-2"></h3>
-
-                                            <h5 class="days text-light">
-                                                <span id="day"></span>
-                                            </h5>
-                                        </div>
-
+                                        <form id="weatherForm" class="form-inline align-end">
+                                            <div class="form-group mx-sm-3 mb-3">
+                                                <label for="city" class="sr-only">City</label>
+                                                <input type="text" class="form-control" id="cityInput" placeholder="City">
+                                                <span id="error"></span>
+                                            </div>
+                                            <button id="showWeather" type="submit" class="btn btn-primary mb-2">Show
+                                                Weather</button>
+                                            </form>
                                         <div id="sun" class="text-right">
                                             <i class="fas fa-sun"></i>
                                             <h3 class="mb-2 weekday"></h3>
                                         </div>
                                     </div>
-                                    <div class="weather-bottom mt-4 px-1">
+
+                                    <h3 id="currentCity" class="mb-2">London</h3>
+
+                                    <h5 class="days text-light">
+                                        <span id="day"></span>
+                                    </h5>
+                                    <div id="weatherMainBlock" class="weather-main-block">
+
+                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    <!--  -->
+
+
+
+                                    <!-- <div class="weather-bottom mt-4 px-1">
                                         <ul id="weather-ul" class="weather-ul">
-                                            <!-- <li
-                                                class="weather-li ">
-                                                <h4 class="">Mo</h4>
-                                                <span id="numeric"></span>
-                                                <i class="fas fa-bolt"></i>
-                                                <span class="max">Max 23</span>
-                                                <span class="min">Min 12</span>
-                                            </li>
-                                            <li class="weather-li">
-                                                <h4 class="my-2">Tu</h4>
-                                                <span>19/02</span>
-                                                <i class="far fa-moon mt-2"></i>
-                                                <span class="max mt-2">23</span>
-                                                <span class="min mt-1 mb-2">12</span>
-                                            </li>
-                                            <li class="weather-li">
-                                                <h4 class="my-2">We</h4>
-                                                <i class="fas fa-rainbow mt-2"></i>
-                                                <span class="max mt-2">23</span>
-                                                <span class="min mt-1 mb-2">12</span>
-                                            </li>
-                                            <li class="weather-li">
-                                                <h4 class="my-2">Th</h4>
-                                                <i class="fas fa-cloud-sun-rain mt-2"></i>
-                                                <span class="max mt-2">23</span>
-                                                <span class="min mt-1 mb-2">12</span>
-                                            </li>
-                                            <li class="weather-li">
-                                                <h4 class="my-2">Fr</h4>
-                                                <i class="fas fa-cloud-rain mt-2"></i>
-                                                <span class="max mt-2">23</span>
-                                                <span class="min mt-1 mb-2">12</span>
-                                            </li>
-                                            <li class="weather-li">
-                                                <h4 class="my-2">Sa</h4>
-                                                <i class="far fa-sun mt-2"></i>
-                                                <span class="max mt-2">23</span>
-                                                <span class="min mt-1 mb-2">12</span>
-                                            </li>
-                                            <li class="weather-li">
-                                                <h4 class="my-2">Su</h4>
-                                                <i class="fas fa-cloud-moon-rain mt-2"></i>
-                                                <span class="max mt-2">23</span>
-                                                <span class="min mt-1 mb-2">12</span>
-                                            </li> -->
+
 
                                         </ul>
+                                    </div> -->
+                                    <div class="anotherCity-block">
+                                        <button id="anotherCity" class="btn btn-primary">Another City</button>
                                     </div>
                                 </div>
                             </div>
@@ -287,9 +275,9 @@
                     <div class="col-12 col-lg-7 contacts mt-2 ">
                         <div class="row">
                             <div class="dashbord-second col-12">
-                               <div class="dashbord-second-header text-center">
-                                <h3>Contacts</h3>
-                               </div>
+                                <div class="dashbord-second-header text-center">
+                                    <h3>Contacts</h3>
+                                </div>
                                 <hr>
                                 <a href="#">
                                     <div class="persons d-flex">

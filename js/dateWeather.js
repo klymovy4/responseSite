@@ -1,17 +1,18 @@
 // Date ===============================================
 let date = new Date();
 let day = date.getDate();
-const tomorrow = new Date(date)
-tomorrow.setDate(tomorrow.getDate() + 1);
-// console.log(tomorrow);
-
-
 let month = date.getMonth();
 let year = date.getFullYear();
 const weekday = { weekday: 'long' };
 const weekdayShort = { weekday: 'short' };
 const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+const innerDay = document.querySelector("#day")
+let cityName = "London";
 
+const showCity = (city) => {
+    document.querySelector("#currentCity").innerHTML = city.name;
+    console.log("showCity", city.name);
+}
 function innerZiro(n) {
     let ziro = "0"
     if (n < 10) {
@@ -20,102 +21,91 @@ function innerZiro(n) {
         return n
     }
 }
-
 function showDate() {
-    const innerDay = document.querySelector("#day")
     return innerDay.innerHTML = innerZiro(day) + "/" + innerZiro(month + 1) + "/" + year;
 };
-
-// innerDay.innerHTML = moment().format('L'); 
-
-// function showDateShort() {
-
-//     return weatherUl.innerHTML = innerZiro(day) + "/" + innerZiro(month + 1) + "/" + year;
-// };
-const curentDay = date.toLocaleDateString('en-US', weekday)
-const curentDayShort = date.toLocaleDateString('en-US', weekdayShort)
-const curentNextDayShort = tomorrow.toLocaleDateString('en-US', weekdayShort)
-// console.log(curentNextDayShort);
-
-// document.querySelector(".weekday").innerHTML = curentDay;
 
 // Date END ===============================================
 // Weather ================================================
 
-async function getApiWeather() {
-    let data = await fetch('http://api.openweathermap.org/data/2.5/forecast?q=Khmelnytskyi&appid=4bfc9c92a94e18bfe80b9636b9e6f50d&units=metric')
+const temp = undefined;
+const country = undefined;
+const sunrise = undefined;
+const sunset = undefined;
+const error = undefined;
+
+async function getApiWeather(cityName) {
+    let data = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=4bfc9c92a94e18bfe80b9636b9e6f50d&units=metric`)
     let weather = await data.json()
     return weather;
 }
-getApiWeather()
+getApiWeather(cityName)
     .then(weather => {
-        showCity(weather.city.name);
-        console.log(weather);
-        return weather
-    })
-    .then(weather => {
+        showCity(cityName);
+      console.log(cityName);
+        
         renderWether(weather);
-        return weather
+
     })
 
-const showCity = (city) => {
-    document.querySelector("#city").innerHTML = city
 
-}
-const showTemperatureMin = (temperature) => {
-    return temperature.list[0].main.temp_min
-}
-const showTemperatureMax = (temperature) => {
-    return temperature.list[0].main.temp_max
-}
+
 
 const weatherUl = document.querySelector("#weather-ul");
+
 const renderWether = (weather) => {
-    const li = `
-        <li class="weather-li">
-            <h4 class="">${curentDayShort}</h4>
-         
-            <i class="fas fa-bolt"></i>
-            <span class="max">Max ${showTemperatureMax(weather).toFixed(0)}</span>
-            <span class="min">Min ${showTemperatureMin(weather).toFixed(0)}</span>
-        </li>
-        <li class="weather-li">
-            <h4 class="">Th</h4>
-            <i class="far fa-moon"></i>
-            <span class="max ">Max 23</span>
-            <span class="min ">Min 12</span>
-        </li>
-        <li class="weather-li">
-            <h4 class=>Fr</h4>
-            <i class="fas fa-rainbow"></i>
-            <span class="max ">Max 23</span>
-            <span class="min ">Min 12</span>
-        </li>
-        <li class="weather-li">
-            <h4 class="">Sa</h4>
-            <i class="fas fa-cloud-sun-rain"></i>
-            <span class="max ">Max 23</span>
-            <span class="min ">Min 12</span>
-        </li>
-        <li class="weather-li">
-            <h4 class="my-2">Su</h4>
-            <i class="fas fa-cloud-rain"></i>
-            <span class="max ">Max 23</span>
-            <span class="min ">Min 12</span>
-        </li>
-        <li class="weather-li ">
-            <h4 class=" ">Mo</h4>
-            <i class="far fa-sun "></i>
-            <span class="max ">Max 23</span>
-            <span class="min ">Min 12</span>
-        </li>
-        <li class="weather-li">
-            <h4 class="">Tu</h4>
-            <i class="fas fa-cloud-moon-rain "></i>
-            <span class="max ">Max 23</span>
-            <span class="min ">Min 12</span>
-        </li>
+
+    const div = `
+    <div class="row pl-3">
+        <div class="col-4">
+            <p>Max:&#8195;${weather.main.temp_max.toFixed(0)}°C</p>
+            <p>Min:&#8195;${weather.main.temp_min.toFixed(0)}°C</p>
+        </div>
+        <div>
+            <p>Pressure:&#8195;${weather.main.pressure}</p>
+            <p>Description:&#8195;${weather.weather[0].description}</p>
+        <div>
+    </div>
     `
-    return weatherUl.innerHTML = li
+    return weatherMainBlock.innerHTML = div;
 }
 showDate()
+
+// ========================= Show Weather
+
+const cityInput = document.querySelector("#cityInput")
+const showWeatherBtn = document.querySelector("#showWeather")
+const anotherCityBtn = document.querySelector("#anotherCity")
+const weatherMainBlock = document.querySelector("#weatherMainBlock")
+const weatherForm = document.querySelector("#weatherForm")
+
+const showWeather = (event) => {
+    event.preventDefault()
+
+    getApiWeather(cityInput.value)
+        .then(weather => {
+            if (weather.cod !== 200) {
+                document.querySelector("#error").innerHTML = "'" + cityInput.value + "'" + " city not found";
+            } else {
+                showCity(weather);
+                renderWether(weather);
+                event.target.closest(".form-inline").style.transform = "translateY(-110%)"
+                anotherCityBtn.style.transform = "translateY(0)";
+                cityInput.value = "";
+            }
+            return weather
+        })
+}
+
+function anotherCity() {
+    weatherForm.style.transform = "translateY(0)"
+    this.style.transform = "translateY(100%)"
+    document.querySelector("#error").innerHTML = ""
+}
+
+
+
+
+showWeatherBtn.addEventListener("click", showWeather)
+anotherCityBtn.addEventListener("click", anotherCity)
+
