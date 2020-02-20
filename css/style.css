@@ -1,7 +1,7 @@
 html, body {
     margin: 0;
     font-size: 100%;
-    min-width: 320px;
+    min-width: 400px;
 	font-family: 'Open Sans', sans-serif;
 	background: #f1f1f1;
 }
@@ -304,14 +304,23 @@ li {
     background: #151515;
     padding: 2em;
     border-radius: 25px;
-    overflow: hidden;
-    height: 313.6px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    /* overflow: hidden; */
+    /* height: 313.6px; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
 }
 .weather-top {
     overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 7px;
+}
+.weather-top .fa-sun {
+    font-size: 43px;
+    color: yellow;
+    animation: rotating 5s linear infinite
 }
 #currentCity {
     font-weight: 900;
@@ -319,11 +328,6 @@ li {
 }
 .weather-main-block p {
     color: white;
-}
-.weather-top .fa-sun {
-    font-size: 43px;
-    color: yellow;
-    animation: rotating 5s linear infinite
 }
 @keyframes rotating {
     0% {transform: rotate(0deg)}
@@ -333,19 +337,7 @@ li {
     display: flex;
     height: 10em;
 }
-.weather-bottom ul li {
-    display: flex;
-    flex-direction: column;
-    width: -webkit-fill-available;
-    color: white;
-    text-align: center;
-    justify-content: space-around;
-}
-.weather-bottom ul li:nth-child(odd){
-    background: rgba(37, 37, 37, 0.31);
-    border-left: 1px solid #292929;
-    border-right: 1px solid #292929;
-}
+
 .contacts img {
     border-radius: 50%;
 }
@@ -367,19 +359,19 @@ li {
     width: -webkit-fill-available;
     text-align: right;
 }
-#anotherCity {
-    transform: translateY(100%)
-}
 #anotherCity:focus, #showWeather:focus {
     box-shadow: none;
 }
-.form-inline, #anotherCity {
+#anotherCity {
+    transition: 0.5s ease-in-out;
+    transform: translateY(100%)
+}
+.weatherForm {
+    display: flex;
+    position: relative;
+    padding-bottom: 6px;
     transition: 0.5s ease-in-out;
     align-items: end;
-}
-.form-inline {
-    position: relative;
-    padding-bottom: 10px;
 }
 .anotherCity-block {
     text-align: right;
@@ -388,6 +380,6 @@ li {
 #error {
     position: absolute;
     color: #f75757;
-    top: 34px;
-    left: 20px;
+    top: 37px;
+    left: 0;
 }

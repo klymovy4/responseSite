@@ -52,17 +52,18 @@ const weatherUl = document.querySelector("#weather-ul");
 const renderWether = (weather) => {
         // console.log(weather);
     const div = `
-    <div class="row">
-        <div class="col-3 ">
+    <div class="row mb-2">
+        <div class="col-12 col-md-3 mb-1">
             <p>Max:&#8195;${weather.main.temp_max.toFixed(0)}°C</p>
             <p>Min:&#8195;${weather.main.temp_min.toFixed(0)}°C</p>
         </div>
-        <div class="col-5 ">
-            <p>Pressure:&#8195;${weather.main.pressure}</p>
+        <hr>
+        <div class="col-12 col-md-5 mb-1">
+            <p>Country:&#8195;${weather.sys.country}</p>
             <p>Description:&#8195;${weather.weather[0].description}</p>
-     
         </div>
-        <div class="col-4 ">
+        <hr>
+        <div class="col-12 col-md-4 text-md-right">
            <p>Sunrise:&#8195;${getSunrise(weather)}</p>
             <p>Sunset:&#8195;${getSunset(weather)}</p>
         </div>
@@ -97,7 +98,7 @@ const showWeather = (event) => {
             } else {
                 showCity(weather);
                 renderWether(weather);
-                event.target.closest(".form-inline").style.transform = "translateY(-100%)"
+                event.target.closest(".weatherForm").style.transform = "translateY(-100%)"
                 anotherCityBtn.style.transform = "translateY(0)";
                 cityInput.value = "";
                 document.querySelector("#error").innerHTML = ""

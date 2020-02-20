@@ -213,14 +213,15 @@
                             <div class="dashbord-first col-12">
                                 <h4 class="mb-4">Whether widgets</h4>
                                 <div class="main-info">
-                                    <div class="weather-top d-flex justify-content-between align-items-center">
-                                        <form id="weatherForm" class="form-inline align-end">
-                                            <div class="form-group mx-sm-3 mb-3">
+
+                                    <div class="weather-top">
+                                        <form id="weatherForm" class="weatherForm">
+                                            <div class="form-group mr-3 mb-3">
                                                 <label for="city" class="sr-only">City</label>
                                                 <input type="text" class="form-control" id="cityInput"
                                                     placeholder="City">
                                             </div>
-                                            <button id="showWeather" type="submit" class="btn btn-primary mb-2">Show
+                                            <button id="showWeather" type="submit" class="btn btn-primary">Show
                                                 Weather
                                             </button>
                                             <span id="error"></span>
@@ -231,39 +232,12 @@
                                         </div>
                                     </div>
 
-                                    <h3 id="currentCity" class="mb-2">London</h3>
+                                    <h2 id="currentCity" class="mb-3">Khmelnytskyi</h2>
 
-                                    <h5 class="days text-light">
+                                    <h5 class="days text-light mb-3">
                                         <span id="day"></span>
                                     </h5>
-                                    <div id="weatherMainBlock" class="weather-main-block">
-
-                                    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                    <!--  -->
-
-
-
-                                    <!-- <div class="weather-bottom mt-4 px-1">
-                                        <ul id="weather-ul" class="weather-ul">
-
-
-                                        </ul>
-                                    </div> -->
+                                    <div id="weatherMainBlock" class="weather-main-block"></div>
                                     <div class="anotherCity-block">
                                         <button id="anotherCity" class="btn btn-primary">Another City</button>
                                     </div>
@@ -274,7 +248,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-12 col-lg-7 contacts mt-2 ">
+                    <div class="col-12 col-md-7 contacts mt-2 ">
                         <div class="row">
                             <div class="dashbord-second col-12">
                                 <div class="dashbord-second-header text-center">
@@ -334,16 +308,20 @@
                         </div>
                     </div>
 
-                    <div class="activities col-12 col-lg-5">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae inventore pariatur minus
-                            ipsa quia ea sint laboriosam beatae, facilis voluptates dignissimos, vel quisquam ut. Labore
-                            blanditiis illum, molestias accusantium reiciendis ad culpa exercitationem, dolores
-                            perspiciatis in obcaecati error. Dignissimos, repellat? Ut officiis et doloremque minima
-                            iure perspiciatis, eum illum repellat explicabo vero eligendi atque debitis iusto incidunt
-                            earum sequi ipsum enim recusandae inventore exercitationem, quam fugiat ad neque aliquam.
-                            Architecto ad ipsam, fugit sapiente omnis adipisci laudantium corrupti dolorem quia
-                            necessitatibus quasi facilis rerum deleniti culpa hic sed possimus maxime eius mollitia
-                            iusto voluptates tempore eum? Magni reiciendis modi vel.</p>
+                    <div class="activities col-md-5 mt-2">
+                        <div class="row ml-md-1">
+                            <div class="dashbord-second ">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae inventore pariatur minus
+                                    ipsa quia ea sint laboriosam beatae, facilis voluptates dignissimos, vel quisquam ut. Labore
+                                    blanditiis illum, molestias accusantium reiciendis ad culpa exercitationem, dolores
+                                    perspiciatis in obcaecati error. Dignissimos, repellat? Ut officiis et doloremque minima
+                                    iure perspiciatis, eum illum repellat explicabo vero eligendi atque debitis iusto incidunt
+                                    earum sequi ipsum enim recusandae inventore exercitationem, quam fugiat ad neque aliquam.
+                                    Architecto ad ipsam, fugit sapiente omnis adipisci laudantium corrupti dolorem quia
+                                    necessitatibus quasi facilis rerum deleniti culpa hic sed possimus maxime eius mollitia
+                                    iusto voluptates tempore eum? Magni reiciendis modi vel.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
