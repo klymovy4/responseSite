@@ -7,11 +7,17 @@ const weekday = { weekday: 'long' };
 const weekdayShort = { weekday: 'short' };
 const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 const innerDay = document.querySelector("#day")
-let cityName = "London";
+const cityInput = document.querySelector("#cityInput")
+const showWeatherBtn = document.querySelector("#showWeather")
+const anotherCityBtn = document.querySelector("#anotherCity")
+const weatherMainBlock = document.querySelector("#weatherMainBlock")
+const weatherForm = document.querySelector("#weatherForm")
+const currentCity = document.querySelector("#currentCity")
+let cityName = "Khmelnytskyi";
 
 const showCity = (city) => {
-    document.querySelector("#currentCity").innerHTML = city.name;
-    console.log("showCity", city.name);
+    currentCity.innerHTML = city.name;
+    // console.log("showCity", city.name);
 }
 function innerZiro(n) {
     let ziro = "0"
@@ -28,43 +34,38 @@ function showDate() {
 // Date END ===============================================
 // Weather ================================================
 
-const temp = undefined;
-const country = undefined;
-const sunrise = undefined;
-const sunset = undefined;
-const error = undefined;
-
 async function getApiWeather(cityName) {
     let data = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=4bfc9c92a94e18bfe80b9636b9e6f50d&units=metric`)
     let weather = await data.json()
+    console.log(weather);
+
     return weather;
 }
 getApiWeather(cityName)
     .then(weather => {
-        showCity(cityName);
-      console.log(cityName);
-        
+        currentCity.innerHTML = cityName;
         renderWether(weather);
-
     })
-
-
-
 
 const weatherUl = document.querySelector("#weather-ul");
 
 const renderWether = (weather) => {
-
+        // console.log(weather);
     const div = `
-    <div class="row pl-3">
-        <div class="col-4">
+    <div class="row">
+        <div class="col-3 ">
             <p>Max:&#8195;${weather.main.temp_max.toFixed(0)}°C</p>
             <p>Min:&#8195;${weather.main.temp_min.toFixed(0)}°C</p>
         </div>
-        <div>
+        <div class="col-5 ">
             <p>Pressure:&#8195;${weather.main.pressure}</p>
             <p>Description:&#8195;${weather.weather[0].description}</p>
-        <div>
+     
+        </div>
+        <div class="col-4 ">
+           <p>Sunrise:&#8195;${getSunrise(weather)}</p>
+            <p>Sunset:&#8195;${getSunset(weather)}</p>
+        </div>
     </div>
     `
     return weatherMainBlock.innerHTML = div;
@@ -73,11 +74,18 @@ showDate()
 
 // ========================= Show Weather
 
-const cityInput = document.querySelector("#cityInput")
-const showWeatherBtn = document.querySelector("#showWeather")
-const anotherCityBtn = document.querySelector("#anotherCity")
-const weatherMainBlock = document.querySelector("#weatherMainBlock")
-const weatherForm = document.querySelector("#weatherForm")
+function getSunset(weather) {
+    const sunset = new Date(weather.sys.sunset * 1000);
+    sunset_date = sunset.toLocaleTimeString();
+    console.log("sunset", sunset_date);
+    return sunset_date
+}
+function getSunrise(weather) {
+    const sunrise = new Date(weather.sys.sunrise * 1000);
+    sunrise_date = sunrise.toLocaleTimeString();
+    console.log("sunrise", sunrise_date);
+    return sunrise_date;
+}
 
 const showWeather = (event) => {
     event.preventDefault()
@@ -89,9 +97,11 @@ const showWeather = (event) => {
             } else {
                 showCity(weather);
                 renderWether(weather);
-                event.target.closest(".form-inline").style.transform = "translateY(-110%)"
+                event.target.closest(".form-inline").style.transform = "translateY(-100%)"
                 anotherCityBtn.style.transform = "translateY(0)";
                 cityInput.value = "";
+                document.querySelector("#error").innerHTML = ""
+                getSunset(weather)
             }
             return weather
         })
@@ -100,12 +110,7 @@ const showWeather = (event) => {
 function anotherCity() {
     weatherForm.style.transform = "translateY(0)"
     this.style.transform = "translateY(100%)"
-    document.querySelector("#error").innerHTML = ""
 }
-
-
-
 
 showWeatherBtn.addEventListener("click", showWeather)
 anotherCityBtn.addEventListener("click", anotherCity)
-
