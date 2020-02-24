@@ -1,9 +1,10 @@
 html, body {
     margin: 0;
     font-size: 100%;
-    min-width: 400px;
+    /* min-width: 405px; */
 	font-family: 'Open Sans', sans-serif;
-	background: #f1f1f1;
+    background: #f1f1f1;
+    width: 100vw;
 }
 body a {
 	text-decoration: none;

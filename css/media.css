@@ -32,18 +32,29 @@
     }
 }
 
-@media only screen and (max-width: 777px) {
-    .form-inline {
+@media only screen and (max-width: 805px) {
+    .navbar .form-inline {
         display: none;
     }
     .li-search {
         display: block;
     }
 }
+@media only screen and (max-width: 767px) {
+    .chart-news {
+        column-count: 2 !important;
+    }
+}
 @media only screen and (max-width: 460px) {
     #sidebar {
         transform: translateX(-250px);
         position: absolute;
+    }
+}
+@media only screen and (max-width: 404px) {
+    .top-icons-agileits {
+        outline: 1px solid red;
+        margin: auto;
     }
 }
 @media only screen and (max-width: 355px) {
@@ -64,5 +75,10 @@
         left: -14.5rem;
         top: 120%;
         min-width: 19.4rem;
+    }
+}
+@media only screen and (max-width: 575px) {
+    .chart-news {
+        column-count: 1 !important;
     }
 }

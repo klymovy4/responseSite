@@ -78,13 +78,13 @@ showDate()
 function getSunset(weather) {
     const sunset = new Date(weather.sys.sunset * 1000);
     sunset_date = sunset.toLocaleTimeString();
-    console.log("sunset", sunset_date);
+    // console.log("sunset", sunset_date);
     return sunset_date
 }
 function getSunrise(weather) {
     const sunrise = new Date(weather.sys.sunrise * 1000);
     sunrise_date = sunrise.toLocaleTimeString();
-    console.log("sunrise", sunrise_date);
+    // console.log("sunrise", sunrise_date);
     return sunrise_date;
 }
 

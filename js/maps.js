@@ -36,11 +36,11 @@ function initMap() {
 
     // Array of markers
     let markers = [
-        {
-            coords: { lat: 49.4230, lng: 26.9871 },
-            iconImage: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
-            content: "<h1>Хмельницкий</h1>"
-        },
+        // {
+        //     coords: { lat: 49.4230, lng: 26.9871 },
+        //     iconImage: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+        //     content: "<h1>Хмельницкий</h1>"
+        // },
         {
             coords: { lat: 49.4230, lng: 26.9871 },
             iconImage: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
