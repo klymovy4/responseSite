@@ -37,7 +37,7 @@ function showDate() {
 async function getApiWeather(cityName) {
     let data = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=4bfc9c92a94e18bfe80b9636b9e6f50d&units=metric`)
     let weather = await data.json()
-    console.log(weather);
+    // console.log(weather);
 
     return weather;
 }

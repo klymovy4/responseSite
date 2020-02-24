@@ -1,0 +1,120 @@
+#content {
+    padding: 20px;
+    width: 100%;
+    transition: 0.3s;
+    min-height: 100vh;
+}
+.navbar {
+    position: relative;
+    display: flex;
+    background: #fff;
+    border-radius: 0.2em;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease-in-out;
+}
+.navbar-btn {
+    border: none;
+    outline: none;
+    background: #4463dc;
+}
+.form-inline .form-control {
+    border: none;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #eee;
+    border-radius: 0;
+    outline: none;
+}
+.form-inline .form-control:focus {
+    /* outline: none; */
+    box-shadow: none;
+}
+.btn-info:hover {
+    background-color: #e04646;
+    color: #fff;
+    border-color: #e04646;
+}
+.btn-info:focus {
+    box-shadow: none;
+}
+.btn-style {
+    background: #f75757;
+    color: #fff;
+    border-color: #e04646;
+}
+.top-icons-agileits a{
+    padding: 8px 16px;
+    position: relative;
+}
+.top-icons-agileits i{
+    font-size: 17px;
+    color: #4c6ef5;
+}
+.top-icons-agileits li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 10px;
+
+}
+.top-icons-agileits i:hover{
+    font-size: 17px;
+    color: #4c6ef5;
+}
+.top-icons-agileits .badge{
+    position: absolute;
+    top: -4px;
+    right: 7px;
+    background: #ff6c5f;
+    color: white;
+    border-radius: 50%;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 13px;
+    height: 17px;
+    width: 17px;
+}
+.li-search {
+    display: none;
+}
+.nav-item {
+    position: relative;
+}
+.dropdown-menu {
+    position: absolute;
+    top: 30px;
+    left: -90px;
+    padding: 16px;
+    min-width: 20rem;
+    display: none;
+}
+.notif-img-agileinfo img {
+    border-radius: 50px;
+    box-shadow: 3px 3px 12px #a09e9e;
+
+}
+.email {
+    font-size: 12px;
+    display: block;
+    padding: 0 !important;
+}
+.dropdown-item h4{
+    font-size: 1em;
+    letter-spacing: 1.5px;
+    color: #8c8c8c;
+}
+.dropdown-item i{
+    color: #000;
+}
+.nav-item:hover .dropdown-menu {
+    display: block;
+    /* height: 100% */
+}
+
+.drop-1 {
+    min-width: 320px;
+}
+.drop-2 {
+    left: -10rem;
+}
+.drop-3 {
+    left: -13.3rem;
+}
